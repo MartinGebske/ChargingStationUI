@@ -1,0 +1,25 @@
+{
+	"BUILD_DIR" : "/home/martin/Documents/ChargingStation_UI/ChargingStation/build-ChargingStation-Desktop_Qt_6_2_0_GCC_64bit-Debug/ChargingStation_autogen",
+	"CMAKE_BINARY_DIR" : "/home/martin/Documents/ChargingStation_UI/ChargingStation/build-ChargingStation-Desktop_Qt_6_2_0_GCC_64bit-Debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/martin/Documents/ChargingStation_UI/ChargingStation/build-ChargingStation-Desktop_Qt_6_2_0_GCC_64bit-Debug",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/martin/Documents/ChargingStation_UI/ChargingStation/ChargingStation",
+	"CMAKE_SOURCE_DIR" : "/home/martin/Documents/ChargingStation_UI/ChargingStation/ChargingStation",
+	"INCLUDE_DIR" : "/home/martin/Documents/ChargingStation_UI/ChargingStation/build-ChargingStation-Desktop_Qt_6_2_0_GCC_64bit-Debug/ChargingStation_autogen/include",
+	"INPUTS" : 
+	[
+		"/home/martin/Documents/ChargingStation_UI/ChargingStation/ChargingStation/WelcomeScreen.qml",
+		"/home/martin/Documents/ChargingStation_UI/ChargingStation/ChargingStation/IdleScreen.qml",
+		"/home/martin/Documents/ChargingStation_UI/ChargingStation/ChargingStation/main.qml",
+		"/home/martin/Documents/ChargingStation_UI/ChargingStation/ChargingStation/idle_screen_1.png"
+	],
+	"LOCK_FILE" : "/home/martin/Documents/ChargingStation_UI/ChargingStation/build-ChargingStation-Desktop_Qt_6_2_0_GCC_64bit-Debug/CMakeFiles/ChargingStation_autogen.dir/AutoRcc_qml_EWIEGA46WW_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "-name", "qml" ],
+	"OUTPUT_CHECKSUM" : "EWIEGA46WW",
+	"OUTPUT_NAME" : "qrc_qml.cpp",
+	"RCC_EXECUTABLE" : "/home/martin/Qt/6.2.0/gcc_64/./libexec/rcc",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "/home/martin/Documents/ChargingStation_UI/ChargingStation/build-ChargingStation-Desktop_Qt_6_2_0_GCC_64bit-Debug/CMakeFiles/ChargingStation_autogen.dir/AutoRcc_qml_EWIEGA46WW_Used.txt",
+	"SOURCE" : "/home/martin/Documents/ChargingStation_UI/ChargingStation/ChargingStation/qml.qrc",
+	"VERBOSITY" : 0
+}

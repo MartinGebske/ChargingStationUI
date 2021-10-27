@@ -1,0 +1,5 @@
+/home/martin/Documents/ChargingStation_UI/ChargingStation/build-ChargingStation-Desktop_Qt_6_2_0_GCC_64bit-Debug/CMakeFiles/rebuild_cache.dir
+/home/martin/Documents/ChargingStation_UI/ChargingStation/build-ChargingStation-Desktop_Qt_6_2_0_GCC_64bit-Debug/CMakeFiles/edit_cache.dir
+/home/martin/Documents/ChargingStation_UI/ChargingStation/build-ChargingStation-Desktop_Qt_6_2_0_GCC_64bit-Debug/CMakeFiles/ChargingStation.dir
+/home/martin/Documents/ChargingStation_UI/ChargingStation/build-ChargingStation-Desktop_Qt_6_2_0_GCC_64bit-Debug/CMakeFiles/ChargingStation_autogen_timestamp_deps.dir
+/home/martin/Documents/ChargingStation_UI/ChargingStation/build-ChargingStation-Desktop_Qt_6_2_0_GCC_64bit-Debug/CMakeFiles/ChargingStation_autogen.dir
