@@ -3,8 +3,12 @@
         <file>main.qml</file>
         <file>IdleScreen.qml</file>
         <file>WelcomeScreen.qml</file>
+        <file>Assets/Img/idle_screen_2.png</file>
+        <file>Assets/Img/idle_screen_1.png</file>
+        <file>LoadManager.qml</file>
+        <file>Assets/Img/ccs_logo.png</file>
+        <file>Assets/Img/background.jpg</file>
+        <file>Assets/Img/ac_logo.png</file>
     </qresource>
-    <qresource prefix="/images">
-        <file>idle_screen_1.png</file>
-    </qresource>
+    <qresource prefix="/images"/>
 </RCC>

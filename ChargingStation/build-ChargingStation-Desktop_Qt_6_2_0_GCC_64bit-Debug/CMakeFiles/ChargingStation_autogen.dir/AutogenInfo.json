@@ -365,7 +365,15 @@
 	"CMAKE_SOURCE_DIR" : "/home/martin/Documents/ChargingStation_UI/ChargingStation/ChargingStation",
 	"DEP_FILE" : "/home/martin/Documents/ChargingStation_UI/ChargingStation/build-ChargingStation-Desktop_Qt_6_2_0_GCC_64bit-Debug/ChargingStation_autogen/deps",
 	"DEP_FILE_RULE_NAME" : "ChargingStation_autogen/timestamp",
-	"HEADERS" : [],
+	"HEADERS" : 
+	[
+		[
+			"/home/martin/Documents/ChargingStation_UI/ChargingStation/ChargingStation/screen_handler.h",
+			"MU",
+			"EWIEGA46WW/moc_screen_handler.cpp",
+			null
+		]
+	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
 	"INCLUDE_DIR" : "/home/martin/Documents/ChargingStation_UI/ChargingStation/build-ChargingStation-Desktop_Qt_6_2_0_GCC_64bit-Debug/ChargingStation_autogen/include",
 	"MOC_COMPILATION_FILE" : "/home/martin/Documents/ChargingStation_UI/ChargingStation/build-ChargingStation-Desktop_Qt_6_2_0_GCC_64bit-Debug/ChargingStation_autogen/mocs_compilation.cpp",
@@ -434,6 +442,11 @@
 	[
 		[
 			"/home/martin/Documents/ChargingStation_UI/ChargingStation/ChargingStation/main.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/martin/Documents/ChargingStation_UI/ChargingStation/ChargingStation/screen_handler.cpp",
 			"MU",
 			null
 		]
