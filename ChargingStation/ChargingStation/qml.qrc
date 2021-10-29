@@ -7,8 +7,9 @@
         <file>Assets/Img/idle_screen_1.png</file>
         <file>LoadManager.qml</file>
         <file>Assets/Img/ccs_logo.png</file>
-        <file>Assets/Img/background.jpg</file>
         <file>Assets/Img/ac_logo.png</file>
+        <file>Assets/Img/background.jpg</file>
+        <file>Assets/Img/idle_background.jpg</file>
     </qresource>
     <qresource prefix="/images"/>
 </RCC>

@@ -1,15 +1,17 @@
-import QtQuick 2.0
+import QtQuick 2.12
 
-Rectangle{
-    id: rec
-    anchors.fill: parent
-    color: "white"
-    property int currentIndex: 1
-    property int nextIndex: 2
-    property bool allowBehaviour: true
-    Component.onCompleted: {
-        currentImage.opacity = 1;
-        nextImage.opacity = 0;
+Item{
+    Rectangle{
+        id: rec
+        anchors.fill: parent
+        color: "#f7b7e1"
+    }
+
+    Image{
+        id: idleBackground
+        anchors.fill: parent
+        source: "/Assets/Img/idle_background.jpg"
+        opacity: 0.5
     }
 
     Image {
@@ -21,52 +23,44 @@ Rectangle{
         anchors.topMargin: 50
         height: 400
         width: 900
-        Behavior on opacity {
-            enabled: allowBehaviour
-            NumberAnimation { easing.type: Easing.InOutQuad; duration: 1500 }
-        }
     }
     Image {
         id: nextImage
         source: "/Assets/Img/idle_screen_2.png"
         opacity: 0
         anchors.fill: currentImage
-        Behavior on opacity {
-            enabled: allowBehaviour
-            NumberAnimation { easing.type: Easing.InOutQuad; duration: 1500 }
-        }
-
     }
-    Timer {
-        interval: 3000
-        repeat: true
+
+    SequentialAnimation{
+        id: seqAnim
+        loops: Animation.Infinite // kann man pausieren....
         running: true
-        onTriggered: {
-            // [6] Block the Behaviour animation.
-            allowBehaviour = false;
-            // [7] Advance the indices.
-            currentIndex = nextIndex;
-            ++nextIndex;
-            // [8] This is key, set the current
-            // image to visible and the next
-            // image to invisible. This happens
-            // instantly as the Behaviour is off.
-            currentImage.opacity = 1;
-            nextImage.opacity = 0;
 
-            nextIndex = currentIndex;
-            --nextIndex
-            // [9] Turn the behaviour so the
-            // opacity change at [10] will
-            // cause an animation.
-            allowBehaviour = true;
-            // [10] Like [3] set the current
-            // image to fade out and the
-            // next image to fade in.
-            currentImage.opacity = 0;
-            nextImage.opacity = 1;
+        // Fade in
+        OpacityAnimator{
+            target: nextImage
+            easing.type: Easing.InOutSine
+            from: 1
+            to: 0
+            duration: 2000
+        }
+        PauseAnimation {
+            duration: 5000
+        }
+
+        // Fade out
+        OpacityAnimator{
+            target: nextImage
+            easing.type: Easing.InOutSine
+            from: 0
+            to: 1
+            duration: 2000
+        }
+        PauseAnimation {
+            duration: 5000
         }
     }
+
     Text{
         id: idleText
         anchors.top: currentImage.bottom
@@ -84,5 +78,4 @@ Rectangle{
     LoadManager{
         id: lm
     }
-
 }

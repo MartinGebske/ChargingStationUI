@@ -2,10 +2,11 @@ import QtQuick 2.0
 
 Item {
     Image{
-        id: backgroundImage
-        anchors.fill: parent
+        id: background
         source: "qrc:/Assets/Img/background.jpg"
-
+        height: 768
+        width: 1024
+        anchors.fill: parent
     }
 
     Rectangle {
@@ -109,7 +110,7 @@ Item {
 
     Timer{
         id: t
-        interval: 1000
+        interval: 5000
         running: true
         onTriggered: lm.source = "IdleScreen.qml"
     }

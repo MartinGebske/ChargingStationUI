@@ -15,6 +15,7 @@
 		"/home/martin/Documents/ChargingStation_UI/ChargingStation/ChargingStation/Assets/Img/ac_logo.png",
 		"/home/martin/Documents/ChargingStation_UI/ChargingStation/ChargingStation/Assets/Img/ccs_logo.png",
 		"/home/martin/Documents/ChargingStation_UI/ChargingStation/ChargingStation/Assets/Img/background.jpg",
+		"/home/martin/Documents/ChargingStation_UI/ChargingStation/ChargingStation/Assets/Img/idle_background.jpg",
 		"/home/martin/Documents/ChargingStation_UI/ChargingStation/ChargingStation/Assets/Img/idle_screen_2.png"
 	],
 	"LOCK_FILE" : "/home/martin/Documents/ChargingStation_UI/ChargingStation/build-ChargingStation-Desktop_Qt_6_2_0_GCC_64bit-Debug/CMakeFiles/ChargingStation_autogen.dir/AutoRcc_qml_EWIEGA46WW_Lock.lock",
