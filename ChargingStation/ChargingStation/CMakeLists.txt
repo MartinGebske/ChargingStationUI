@@ -19,6 +19,9 @@ set(PROJECT_SOURCES
         qml.qrc
         screen_handler.cpp
         screen_handler.h
+        hpc_manager.cpp
+        hpc_manager.h
+
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

@@ -1,17 +1,12 @@
 import QtQuick 2.12
 
 Item{
-    Rectangle{
-        id: rec
-        anchors.fill: parent
-        color: "#f7b7e1"
-    }
+   id: root
 
     Image{
         id: idleBackground
         anchors.fill: parent
-        source: "/Assets/Img/idle_background.jpg"
-        opacity: 0.5
+        source: "/Assets/Img/background_1.png"
     }
 
     Image {
@@ -33,7 +28,7 @@ Item{
 
     SequentialAnimation{
         id: seqAnim
-        loops: Animation.Infinite // kann man pausieren....
+        loops: Animation.Infinite
         running: true
 
         // Fade in
@@ -61,14 +56,44 @@ Item{
         }
     }
 
-    Text{
+    Text {
         id: idleText
+        color: "white"
         anchors.top: currentImage.bottom
+        anchors.topMargin: 20
         anchors.horizontalCenter: currentImage.horizontalCenter
-        anchors.topMargin: 60
-        text: qsTr("Please use your RFID card or App\nto start the charging process!")
-        font.pointSize: 20
+        text: qsTr("Please use your RFID card or App to start the charging process!")
         font.family: "Helvetica"
+        font.pointSize: 20
+        width: currentImage.width
+        leftPadding: 200
+        rightPadding: 200
+        horizontalAlignment: Text.AlignHCenter
+        wrapMode: Text.Wrap
+
+    }
+
+    Rectangle{
+        anchors.top: idleText.bottom
+        anchors.horizontalCenter: root.horizontalCenter
+        Row{
+            topPadding: 50
+            anchors.horizontalCenter: parent.horizontalCenter
+            spacing: 60
+
+            IdleInfo{
+                source: "/Assets/Img/App_Logo.png"
+                description: "App"
+            }
+            IdleInfo{
+                source: "/Assets/Img/QR_Logo.png"
+                description: "Ad-Hoc"
+            }
+            IdleInfo{
+                source: "/Assets/Img/RFID_Logo.png"
+                description: "RFID Card"
+            }
+        }
     }
     MouseArea{
         signal changeToPage2

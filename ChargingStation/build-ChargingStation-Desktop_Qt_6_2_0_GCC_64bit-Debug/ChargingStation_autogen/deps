@@ -1,5 +1,7 @@
 ChargingStation_autogen/timestamp: \
 	/home/martin/Documents/ChargingStation_UI/ChargingStation/ChargingStation/CMakeLists.txt \
+	/home/martin/Documents/ChargingStation_UI/ChargingStation/ChargingStation/hpc_manager.cpp \
+	/home/martin/Documents/ChargingStation_UI/ChargingStation/ChargingStation/hpc_manager.h \
 	/home/martin/Documents/ChargingStation_UI/ChargingStation/ChargingStation/main.cpp \
 	/home/martin/Documents/ChargingStation_UI/ChargingStation/ChargingStation/qml.qrc \
 	/home/martin/Documents/ChargingStation_UI/ChargingStation/ChargingStation/screen_handler.cpp \
@@ -7,6 +9,7 @@ ChargingStation_autogen/timestamp: \
 	/home/martin/Documents/ChargingStation_UI/ChargingStation/build-ChargingStation-Desktop_Qt_6_2_0_GCC_64bit-Debug/CMakeFiles/3.21.1/CMakeCXXCompiler.cmake \
 	/home/martin/Documents/ChargingStation_UI/ChargingStation/build-ChargingStation-Desktop_Qt_6_2_0_GCC_64bit-Debug/CMakeFiles/3.21.1/CMakeSystem.cmake \
 	/home/martin/Documents/ChargingStation_UI/ChargingStation/build-ChargingStation-Desktop_Qt_6_2_0_GCC_64bit-Debug/ChargingStation_autogen/moc_predefs.h \
+	/home/martin/Qt/6.2.0/gcc_64/include/QtCore/QDebug \
 	/home/martin/Qt/6.2.0/gcc_64/include/QtCore/QObject \
 	/home/martin/Qt/6.2.0/gcc_64/include/QtCore/QVariant \
 	/home/martin/Qt/6.2.0/gcc_64/include/QtCore/qalgorithms.h \

@@ -10,6 +10,10 @@ Window {
     title: qsTr("HPC")
     id: root
 
+    HPC_Manager{
+        id: hpcManager
+    }
+
     ScreenHandler{
         id: screenHandler
     }

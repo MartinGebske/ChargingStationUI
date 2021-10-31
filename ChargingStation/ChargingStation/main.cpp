@@ -2,6 +2,7 @@
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 #include "screen_handler.h"
+#include "hpc_manager.h"
 
 
 int main(int argc, char *argv[])
@@ -13,6 +14,7 @@ int main(int argc, char *argv[])
     QGuiApplication app(argc, argv);
 
     qmlRegisterType<screen_handler>("de.martingebske", 1,0, "ScreenHandler");
+    qmlRegisterType<hpc_manager>("de.martingebske", 1,0, "HPC_Manager");
 
     QQmlApplicationEngine engine;
     const QUrl url(QStringLiteral("qrc:/main.qml"));
