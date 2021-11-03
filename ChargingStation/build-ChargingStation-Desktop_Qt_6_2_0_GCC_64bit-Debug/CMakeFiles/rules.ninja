@@ -42,7 +42,7 @@ rule CXX_EXECUTABLE_LINKER__ChargingStation_Debug
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = /home/martin/Qt/Tools/CMake/bin/cmake --regenerate-during-build -S/home/martin/Documents/ChargingStation_UI/ChargingStation/ChargingStation -B/home/martin/Documents/ChargingStation_UI/ChargingStation/build-ChargingStation-Desktop_Qt_6_2_0_GCC_64bit-Debug
+  command = /home/martin/Qt/Tools/CMake/bin/cmake --regenerate-during-build -S/home/martin/Desktop/ChargingStation/ChargingStation -B/home/martin/Documents/ChargingStation_UI/ChargingStation/build-ChargingStation-Desktop_Qt_6_2_0_GCC_64bit-Debug
   description = Re-running CMake...
   generator = 1
 

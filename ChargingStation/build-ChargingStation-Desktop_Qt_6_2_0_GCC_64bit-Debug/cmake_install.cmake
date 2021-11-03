@@ -1,4 +1,4 @@
-# Install script for directory: /home/martin/Documents/ChargingStation_UI/ChargingStation/ChargingStation
+# Install script for directory: /home/martin/Desktop/ChargingStation/ChargingStation
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

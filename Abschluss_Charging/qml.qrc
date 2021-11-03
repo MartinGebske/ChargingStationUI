@@ -1,0 +1,19 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>WelcomeScreen.qml</file>
+        <file>LoadManager.qml</file>
+        <file>IdleScreen.qml</file>
+        <file>IdleInfo.qml</file>
+        <file>ChargingSlot.qml</file>
+        <file>Assets/Img/RFID_Logo.png</file>
+        <file>Assets/Img/QR_Logo.png</file>
+        <file>Assets/Img/idle_screen_2.png</file>
+        <file>Assets/Img/idle_screen_1.png</file>
+        <file>Assets/Img/ccs_logo.png</file>
+        <file>Assets/Img/background_2.png</file>
+        <file>Assets/Img/background_1.png</file>
+        <file>Assets/Img/App_Logo.png</file>
+        <file>Assets/Img/ac_logo.png</file>
+    </qresource>
+</RCC>

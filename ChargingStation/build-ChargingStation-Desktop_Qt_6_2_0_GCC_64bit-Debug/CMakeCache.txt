@@ -210,7 +210,7 @@ ChargingStation_BINARY_DIR:STATIC=/home/martin/Documents/ChargingStation_UI/Char
 ChargingStation_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
-ChargingStation_SOURCE_DIR:STATIC=/home/martin/Documents/ChargingStation_UI/ChargingStation/ChargingStation
+ChargingStation_SOURCE_DIR:STATIC=/home/martin/Desktop/ChargingStation/ChargingStation
 
 //Path to a file.
 OPENGL_EGL_INCLUDE_DIR:PATH=/usr/include
@@ -385,7 +385,7 @@ CMAKE_HAVE_LIBC_PTHREAD:INTERNAL=
 CMAKE_HAVE_PTHREAD_H:INTERNAL=1
 //Source directory with the top level CMakeLists.txt file for this
 // project
-CMAKE_HOME_DIRECTORY:INTERNAL=/home/martin/Documents/ChargingStation_UI/ChargingStation/ChargingStation
+CMAKE_HOME_DIRECTORY:INTERNAL=/home/martin/Desktop/ChargingStation/ChargingStation
 //Install .so files without execute permission.
 CMAKE_INSTALL_SO_NO_EXE:INTERNAL=1
 //ADVANCED property for variable: CMAKE_LINKER
