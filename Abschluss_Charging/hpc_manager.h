@@ -14,10 +14,18 @@ private:
     bool occupiedThree = false;
     int occupiedSlots = 0;
 
+    enum SELECTED_CHARGER{
+        CCS1,
+        CCS2,
+        AC
+    };
+
+    SELECTED_CHARGER ACTIVE_CHARGER;
+
 public:
     explicit hpc_manager(QObject *parent = nullptr);
     Q_INVOKABLE bool chargerIsOccupied();
-    void doSomething();
+    Q_INVOKABLE SELECTED_CHARGER getActiveCharger();
 
 
 signals:

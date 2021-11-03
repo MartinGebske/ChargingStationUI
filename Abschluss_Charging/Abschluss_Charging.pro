@@ -8,6 +8,7 @@ CONFIG += c++11
 
 SOURCES += \
         hpc_manager.cpp \
+        language_selector.cpp \
         main.cpp
 
 RESOURCES += qml.qrc
@@ -29,4 +30,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
-    hpc_manager.h
+    hpc_manager.h \
+    language_selector.h

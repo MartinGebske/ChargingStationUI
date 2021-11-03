@@ -17,7 +17,7 @@ Window {
 
     LoadManager{
     id: lm
-    source: "IdleScreen.qml"
+    source: "Screen_Welcome.qml"
     }
 
 }

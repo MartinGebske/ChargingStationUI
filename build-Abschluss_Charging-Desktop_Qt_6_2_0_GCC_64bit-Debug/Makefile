@@ -53,14 +53,18 @@ OBJECTS_DIR   = ./
 ####### Files
 
 SOURCES       = ../Abschluss_Charging/hpc_manager.cpp \
+		../Abschluss_Charging/language_selector.cpp \
 		../Abschluss_Charging/main.cpp qrc_qml.cpp \
 		qrc_qmake_qmake_qm_files.cpp \
-		moc_hpc_manager.cpp
+		moc_hpc_manager.cpp \
+		moc_language_selector.cpp
 OBJECTS       = hpc_manager.o \
+		language_selector.o \
 		main.o \
 		qrc_qml.o \
 		qrc_qmake_qmake_qm_files.o \
-		moc_hpc_manager.o
+		moc_hpc_manager.o \
+		moc_language_selector.o
 DIST          = ../../../Qt/6.2.0/gcc_64/mkspecs/features/spec_pre.prf \
 		../../../Qt/6.2.0/gcc_64/mkspecs/common/unix.conf \
 		../../../Qt/6.2.0/gcc_64/mkspecs/common/linux.conf \
@@ -178,6 +182,7 @@ DIST          = ../../../Qt/6.2.0/gcc_64/mkspecs/features/spec_pre.prf \
 		../../../Qt/6.2.0/gcc_64/mkspecs/features/qt_config.prf \
 		../../../Qt/6.2.0/gcc_64/mkspecs/linux-g++/qmake.conf \
 		../../../Qt/6.2.0/gcc_64/mkspecs/features/spec_post.prf \
+		../Abschluss_Charging/.qmake.stash \
 		../../../Qt/6.2.0/gcc_64/mkspecs/features/exclusive_builds.prf \
 		../../../Qt/6.2.0/gcc_64/mkspecs/features/toolchain.prf \
 		../../../Qt/6.2.0/gcc_64/mkspecs/features/default_pre.prf \
@@ -198,7 +203,9 @@ DIST          = ../../../Qt/6.2.0/gcc_64/mkspecs/features/spec_pre.prf \
 		../../../Qt/6.2.0/gcc_64/mkspecs/features/exceptions.prf \
 		../../../Qt/6.2.0/gcc_64/mkspecs/features/yacc.prf \
 		../../../Qt/6.2.0/gcc_64/mkspecs/features/lex.prf \
-		../Abschluss_Charging/Abschluss_Charging.pro ../Abschluss_Charging/hpc_manager.h ../Abschluss_Charging/hpc_manager.cpp \
+		../Abschluss_Charging/Abschluss_Charging.pro ../Abschluss_Charging/hpc_manager.h \
+		../Abschluss_Charging/language_selector.h ../Abschluss_Charging/hpc_manager.cpp \
+		../Abschluss_Charging/language_selector.cpp \
 		../Abschluss_Charging/main.cpp
 QMAKE_TARGET  = Abschluss_Charging
 DESTDIR       = 
@@ -328,6 +335,7 @@ Makefile: ../Abschluss_Charging/Abschluss_Charging.pro ../../../Qt/6.2.0/gcc_64/
 		../../../Qt/6.2.0/gcc_64/mkspecs/features/qt_config.prf \
 		../../../Qt/6.2.0/gcc_64/mkspecs/linux-g++/qmake.conf \
 		../../../Qt/6.2.0/gcc_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		../../../Qt/6.2.0/gcc_64/mkspecs/features/exclusive_builds.prf \
 		../../../Qt/6.2.0/gcc_64/mkspecs/features/toolchain.prf \
 		../../../Qt/6.2.0/gcc_64/mkspecs/features/default_pre.prf \
@@ -476,6 +484,7 @@ Makefile: ../Abschluss_Charging/Abschluss_Charging.pro ../../../Qt/6.2.0/gcc_64/
 ../../../Qt/6.2.0/gcc_64/mkspecs/features/qt_config.prf:
 ../../../Qt/6.2.0/gcc_64/mkspecs/linux-g++/qmake.conf:
 ../../../Qt/6.2.0/gcc_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 ../../../Qt/6.2.0/gcc_64/mkspecs/features/exclusive_builds.prf:
 ../../../Qt/6.2.0/gcc_64/mkspecs/features/toolchain.prf:
 ../../../Qt/6.2.0/gcc_64/mkspecs/features/default_pre.prf:
@@ -523,8 +532,8 @@ distdir: FORCE
 	$(COPY_FILE) --parents ../Abschluss_Charging/Abschluss_Charging_de_DE.ts $(DISTDIR)/
 	$(COPY_FILE) --parents ../Abschluss_Charging/qml.qrc qmake_qmake_qm_files.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents ../../../Qt/6.2.0/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../Abschluss_Charging/hpc_manager.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../Abschluss_Charging/hpc_manager.cpp ../Abschluss_Charging/main.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../Abschluss_Charging/hpc_manager.h ../Abschluss_Charging/language_selector.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../Abschluss_Charging/hpc_manager.cpp ../Abschluss_Charging/language_selector.cpp ../Abschluss_Charging/main.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../Abschluss_Charging/Abschluss_Charging_de_DE.ts $(DISTDIR)/
 
 
@@ -561,11 +570,12 @@ compiler_rcc_clean:
 qrc_qml.cpp: ../Abschluss_Charging/qml.qrc \
 		../../../Qt/6.2.0/gcc_64/libexec/rcc \
 		../Abschluss_Charging/LoadManager.qml \
-		../Abschluss_Charging/WelcomeScreen.qml \
+		../Abschluss_Charging/Screen_Idle.qml \
 		../Abschluss_Charging/IdleInfo.qml \
-		../Abschluss_Charging/IdleScreen.qml \
-		../Abschluss_Charging/main.qml \
 		../Abschluss_Charging/ChargingSlot.qml \
+		../Abschluss_Charging/main.qml \
+		../Abschluss_Charging/Screen_Charging.qml \
+		../Abschluss_Charging/Screen_Welcome.qml \
 		../Abschluss_Charging/Assets/Img/RFID_Logo.png \
 		../Abschluss_Charging/Assets/Img/QR_Logo.png \
 		../Abschluss_Charging/Assets/Img/idle_screen_2.png \
@@ -588,9 +598,9 @@ compiler_moc_predefs_clean:
 moc_predefs.h: ../../../Qt/6.2.0/gcc_64/mkspecs/features/data/dummy.cpp
 	g++ -pipe -g -std=gnu++1z -Wall -Wextra -dM -E -o moc_predefs.h ../../../Qt/6.2.0/gcc_64/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc_hpc_manager.cpp
+compiler_moc_header_make_all: moc_hpc_manager.cpp moc_language_selector.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_hpc_manager.cpp
+	-$(DEL_FILE) moc_hpc_manager.cpp moc_language_selector.cpp
 moc_hpc_manager.cpp: ../Abschluss_Charging/hpc_manager.h \
 		../../../Qt/6.2.0/gcc_64/include/QtCore/QObject \
 		../../../Qt/6.2.0/gcc_64/include/QtCore/qobject.h \
@@ -674,6 +684,79 @@ moc_hpc_manager.cpp: ../Abschluss_Charging/hpc_manager.h \
 		moc_predefs.h \
 		../../../Qt/6.2.0/gcc_64/libexec/moc
 	/home/martin/Qt/6.2.0/gcc_64/libexec/moc $(DEFINES) --include /home/martin/Documents/ChargingStation_UI/build-Abschluss_Charging-Desktop_Qt_6_2_0_GCC_64bit-Debug/moc_predefs.h -I/home/martin/Qt/6.2.0/gcc_64/mkspecs/linux-g++ -I/home/martin/Documents/ChargingStation_UI/Abschluss_Charging -I/home/martin/Qt/6.2.0/gcc_64/include -I/home/martin/Qt/6.2.0/gcc_64/include/QtQuick -I/home/martin/Qt/6.2.0/gcc_64/include/QtOpenGL -I/home/martin/Qt/6.2.0/gcc_64/include/QtGui -I/home/martin/Qt/6.2.0/gcc_64/include/QtQmlModels -I/home/martin/Qt/6.2.0/gcc_64/include/QtQml -I/home/martin/Qt/6.2.0/gcc_64/include/QtNetwork -I/home/martin/Qt/6.2.0/gcc_64/include/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../Abschluss_Charging/hpc_manager.h -o moc_hpc_manager.cpp
+
+moc_language_selector.cpp: ../Abschluss_Charging/language_selector.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/QObject \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qobject.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qobjectdefs.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qnamespace.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qglobal.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qconfig-bootstrapped.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qconfig.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qtcore-config.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qsystemdetection.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qprocessordetection.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qcompilerdetection.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qtypeinfo.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qcontainerfwd.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qsysinfo.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qlogging.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qflags.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qatomic.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qbasicatomic.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qgenericatomic.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qatomic_cxx11.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qglobalstatic.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qnumeric.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qversiontagging.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qtmetamacros.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qstring.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qchar.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qstringview.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qbytearray.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qrefcount.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qarraydata.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qpair.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qarraydatapointer.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qarraydataops.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qcontainertools_impl.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qbytearrayalgorithms.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qbytearrayview.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qstringliteral.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qstringalgorithms.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qanystringview.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qutf8stringview.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qstringtokenizer.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qstringbuilder.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qlist.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qhashfunctions.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qiterator.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qbytearraylist.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qstringlist.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qalgorithms.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qstringmatcher.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qcoreevent.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qscopedpointer.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qmetatype.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qcompare.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qvarlengtharray.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qscopeguard.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qdatastream.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qiodevicebase.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qiterable.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qmetacontainer.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qcontainerinfo.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qtaggedpointer.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qmath.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qobject_impl.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qproperty.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qshareddata.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qpropertyprivate.h \
+		moc_predefs.h \
+		../../../Qt/6.2.0/gcc_64/libexec/moc
+	/home/martin/Qt/6.2.0/gcc_64/libexec/moc $(DEFINES) --include /home/martin/Documents/ChargingStation_UI/build-Abschluss_Charging-Desktop_Qt_6_2_0_GCC_64bit-Debug/moc_predefs.h -I/home/martin/Qt/6.2.0/gcc_64/mkspecs/linux-g++ -I/home/martin/Documents/ChargingStation_UI/Abschluss_Charging -I/home/martin/Qt/6.2.0/gcc_64/include -I/home/martin/Qt/6.2.0/gcc_64/include/QtQuick -I/home/martin/Qt/6.2.0/gcc_64/include/QtOpenGL -I/home/martin/Qt/6.2.0/gcc_64/include/QtGui -I/home/martin/Qt/6.2.0/gcc_64/include/QtQmlModels -I/home/martin/Qt/6.2.0/gcc_64/include/QtQml -I/home/martin/Qt/6.2.0/gcc_64/include/QtNetwork -I/home/martin/Qt/6.2.0/gcc_64/include/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../Abschluss_Charging/language_selector.h -o moc_language_selector.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
@@ -770,6 +853,77 @@ hpc_manager.o: ../Abschluss_Charging/hpc_manager.cpp ../Abschluss_Charging/hpc_m
 		../../../Qt/6.2.0/gcc_64/include/QtCore/qsharedpointer.h \
 		../../../Qt/6.2.0/gcc_64/include/QtCore/qsharedpointer_impl.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o hpc_manager.o ../Abschluss_Charging/hpc_manager.cpp
+
+language_selector.o: ../Abschluss_Charging/language_selector.cpp ../Abschluss_Charging/language_selector.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/QObject \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qobject.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qobjectdefs.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qnamespace.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qglobal.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qconfig-bootstrapped.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qconfig.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qtcore-config.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qsystemdetection.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qprocessordetection.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qcompilerdetection.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qtypeinfo.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qcontainerfwd.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qsysinfo.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qlogging.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qflags.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qatomic.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qbasicatomic.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qgenericatomic.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qatomic_cxx11.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qglobalstatic.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qnumeric.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qversiontagging.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qtmetamacros.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qstring.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qchar.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qstringview.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qbytearray.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qrefcount.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qarraydata.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qpair.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qarraydatapointer.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qarraydataops.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qcontainertools_impl.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qbytearrayalgorithms.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qbytearrayview.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qstringliteral.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qstringalgorithms.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qanystringview.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qutf8stringview.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qstringtokenizer.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qstringbuilder.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qlist.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qhashfunctions.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qiterator.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qbytearraylist.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qstringlist.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qalgorithms.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qstringmatcher.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qcoreevent.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qscopedpointer.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qmetatype.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qcompare.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qvarlengtharray.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qscopeguard.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qdatastream.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qiodevicebase.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qiterable.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qmetacontainer.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qcontainerinfo.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qtaggedpointer.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qmath.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qobject_impl.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qproperty.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qshareddata.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qpropertyprivate.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o language_selector.o ../Abschluss_Charging/language_selector.cpp
 
 main.o: ../Abschluss_Charging/main.cpp ../../../Qt/6.2.0/gcc_64/include/QtGui/QGuiApplication \
 		../../../Qt/6.2.0/gcc_64/include/QtGui/qguiapplication.h \
@@ -904,9 +1058,14 @@ main.o: ../Abschluss_Charging/main.cpp ../../../Qt/6.2.0/gcc_64/include/QtGui/QG
 		../../../Qt/6.2.0/gcc_64/include/QtQml/qqmlregistration.h \
 		../../../Qt/6.2.0/gcc_64/include/QtQml/qqmlerror.h \
 		../../../Qt/6.2.0/gcc_64/include/QtQml/qqmlabstracturlinterceptor.h \
+		../../../Qt/6.2.0/gcc_64/include/QtQml/QQmlContext \
+		../../../Qt/6.2.0/gcc_64/include/QtQml/qqmlcontext.h \
 		../../../Qt/6.2.0/gcc_64/include/QtCore/QLocale \
 		../../../Qt/6.2.0/gcc_64/include/QtCore/QTranslator \
-		../../../Qt/6.2.0/gcc_64/include/QtCore/qtranslator.h
+		../../../Qt/6.2.0/gcc_64/include/QtCore/qtranslator.h \
+		../Abschluss_Charging/hpc_manager.h \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/QObject \
+		../../../Qt/6.2.0/gcc_64/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../Abschluss_Charging/main.cpp
 
 qrc_qml.o: qrc_qml.cpp 
@@ -917,6 +1076,9 @@ qrc_qmake_qmake_qm_files.o: qrc_qmake_qmake_qm_files.cpp
 
 moc_hpc_manager.o: moc_hpc_manager.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_hpc_manager.o moc_hpc_manager.cpp
+
+moc_language_selector.o: moc_language_selector.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_language_selector.o moc_language_selector.cpp
 
 ####### Install
 
